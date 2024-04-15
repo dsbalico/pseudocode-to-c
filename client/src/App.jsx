@@ -45,7 +45,7 @@ function App() {
       "pseudocode": processed_pseudocode
     }
     
-    await axios.post(`${import.meta.env.VITE_API}/pseudocode-to-c`, data)
+    await axios.post("https://pseudocode-to-c.vercel.app/pseudocode-to-c", data)
       .then(res => {
         let beautifiedCode = js_beautify.js_beautify(res.data, { indent_size: 2, space_in_empty_paren: true });
         setCLanguage(beautifiedCode);
